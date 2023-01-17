@@ -1,0 +1,7 @@
+[theme]
+primaryColor="RGB(0,120,212)"
+base="dark"
+
+[logger]
+messageFormat = "%(asctime)s  %(levelname)10s  %(filename)20s    %(message)s"
+
