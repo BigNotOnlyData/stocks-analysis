@@ -73,9 +73,9 @@ def _style_page_container():
     # css-ocqkz7 e1tzin5v4
     html_style = """
                 <style>
-                #root > div:nth-child(1) > div.withScreencast > div > div > div > \
-                section > div.block-container.css-k1ih3n.egzxvld4 > div:nth-child(1) \
-                > div > div:nth-child(7) > div {
+                #root > div:nth-child(1) > div.withScreencast > div > div > div >\
+                 section > div.block-container.css-k1ih3n.egzxvld4 > div:nth-child(1) >\
+                  div > div:nth-child(8) > div {
                 /* background-color: rgb(20, 21, 26); */
                 border: 1px solid rgb(38,39,48);
                 border-radius: 10px !important;
