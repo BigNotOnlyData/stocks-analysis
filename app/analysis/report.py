@@ -8,8 +8,7 @@ from config import DAYS_PER_YEAR
 def asset_report(df):
     # Вычисление показателей
     returns = ms.log_returns(df['Close']).dropna()
-    returns = returns.apply('exp') - 1
-    buy_and_hold = returns.cumsum()
+    buy_and_hold = returns.cumsum().apply('exp') - 1
     total_return = buy_and_hold[-1]
     best_return = buy_and_hold.max()
     worst_return = buy_and_hold.min()
