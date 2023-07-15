@@ -24,7 +24,7 @@ def get_data(ticker: str, **kwargs) -> Optional[pd.DataFrame]:
     :param ticker: тикер акции
     """
     # загружаем, если строка не пустая
-    data = yf.download(ticker, progress=False, show_errors=False) if ticker else None
+    data = yf.download(ticker, progress=False, show_errors=True) if ticker else None
     # возвращаем данные, если они есть (случай с несуществующим тикером)
     return data if (data is not None and len(data)) else None
 
