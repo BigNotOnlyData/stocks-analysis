@@ -55,7 +55,7 @@ def main():
         set_default_session_state()
         app_interface()
     except Exception as e:
-        logging.error(e)
+        logging.exception(e)
 
 
 if __name__ == "__main__":
