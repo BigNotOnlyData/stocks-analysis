@@ -26,6 +26,7 @@ def get_data(ticker: str, **kwargs) -> Optional[pd.DataFrame]:
     # загружаем, если строка не пустая
     data = yf.download(ticker, progress=False, show_errors=True, **kwargs) if ticker else None
     logging.info(f"{ticker=} date_today={kwargs['end']}")
+    logging.info(f"{data=}")
     # возвращаем данные, если они есть (случай с несуществующим тикером)
     return data if (data is not None and len(data)) else None
 
