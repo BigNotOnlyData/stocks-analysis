@@ -17,15 +17,13 @@ def today(func):
 
 
 @st.cache(max_entries=30, ttl=60*60*12, show_spinner=False)
-@today
-def get_data(ticker: str, **kwargs) -> Optional[pd.DataFrame]:
+def get_data(ticker: str) -> Optional[pd.DataFrame]:
     """
     Загрузка котировок акций с yahoo finance
     :param ticker: тикер акции
     """
     # загружаем, если строка не пустая
-    data = yf.download(ticker, progress=False, show_errors=True, **kwargs) if ticker else None
-    logging.info(f"{ticker=} date_today={kwargs['end']}")
+    data = yf.download(ticker, progress=False, show_errors=True, period="20y") if ticker else None
     logging.info(f"{data=}")
     # возвращаем данные, если они есть (случай с несуществующим тикером)
     return data if (data is not None and len(data)) else None
